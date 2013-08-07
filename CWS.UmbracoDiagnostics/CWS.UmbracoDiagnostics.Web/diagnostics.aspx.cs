@@ -19,6 +19,8 @@ namespace CWS.UmbracoDiagnostics.Web
 {
     public partial class diagnostics : System.Web.UI.Page
     {
+        public DiagnosticsClient Diagnostics { get; private set; }
+
         public List<Assembly> AllAssemblies             = new List<Assembly>();
         public List<TreeDefinition> AllTrees            = new List<TreeDefinition>();
         public List<RestExtension> AllRestExtensions    = new List<RestExtension>(); 
@@ -26,6 +28,9 @@ namespace CWS.UmbracoDiagnostics.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            Diagnostics = new DiagnosticsClient();
+
             //Get Version
             GetVersion();
 
