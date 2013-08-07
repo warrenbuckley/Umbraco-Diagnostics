@@ -74,6 +74,5 @@ C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.Um
 C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.UmbracoDiagnostics.Web\bin\umbraco.MacroEngines.xml
 C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.UmbracoDiagnostics.Web\bin\umbraco.macroRenderings.xml
 C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.UmbracoDiagnostics.Web\bin\umbraco.providers.xml
-C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.UmbracoDiagnostics.Web\obj\Debug\CWS.UmbracoDiagnostics.Web.csprojResolveAssemblyReference.cache
 C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.UmbracoDiagnostics.Web\obj\Debug\CWS.UmbracoDiagnostics.Web.dll
 C:\inetpub\wwwroot\Personal\CWS-UmbracoDiagnostics\CWS.UmbracoDiagnostics\CWS.UmbracoDiagnostics.Web\obj\Debug\CWS.UmbracoDiagnostics.Web.pdb

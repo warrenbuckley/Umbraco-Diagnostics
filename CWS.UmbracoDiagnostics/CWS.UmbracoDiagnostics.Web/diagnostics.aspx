@@ -32,6 +32,27 @@
             %>
         </ul>
 
+        <hr/>
+        
+        <h2>Trees <asp:Label runat="server" ID="treeCount"/></h2>
+        <ul>
+            <%
+                foreach (var tree in AllTrees.OrderBy(x => x.App.name))
+                {
+            %>
+                    <li>
+                        <strong>Tree Alias:</strong> <%=tree.Tree.Alias %><br/>
+                        <strong>App Alias:</strong> <%=tree.App.alias %>
+                    </li>
+            <%      
+                }
+            %>
+        </ul>
+        
+        <hr/>
+        
+        <h2>Rest Extensions</h2>
+        
     </form>
 </body>
 </html>
