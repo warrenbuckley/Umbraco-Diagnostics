@@ -245,7 +245,9 @@
     <Compile Include="diagnostics.aspx.designer.cs">
       <DependentUpon>diagnostics.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DiagnosticsAssemblyInfo.cs" />
     <Compile Include="DiagnosticsClient.cs" />
+    <Compile Include="DiagnosticsPackageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

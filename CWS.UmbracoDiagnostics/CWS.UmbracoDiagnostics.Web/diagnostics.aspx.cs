@@ -30,10 +30,7 @@ namespace CWS.UmbracoDiagnostics.Web
         {
 
             Diagnostics = new DiagnosticsClient();
-
-            //Get Version
-            GetVersion();
-
+            
             //Get Assemblies
             GetAssemblies();
 
@@ -41,13 +38,6 @@ namespace CWS.UmbracoDiagnostics.Web
             GetTrees();
 
 
-        }
-
-        protected void GetVersion()
-        {
-            //Umbraco Version
-            umbAssembly.Text = UmbracoVersion.AssemblyVersion;
-            umbVersion.Text = UmbracoVersion.Current.ToString();
         }
 
         protected void GetAssemblies()
