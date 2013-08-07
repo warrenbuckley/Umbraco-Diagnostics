@@ -228,6 +228,7 @@
     <Content Include="bin\x86\sqlcese40.dll" />
     <Content Include="css\dummy.txt" />
     <Content Include="default.aspx" />
+    <Content Include="diagnostics.aspx" />
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
@@ -237,6 +238,13 @@
     <Content Include="xslt\dummy.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="diagnostics.aspx.cs">
+      <DependentUpon>diagnostics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="diagnostics.aspx.designer.cs">
+      <DependentUpon>diagnostics.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
