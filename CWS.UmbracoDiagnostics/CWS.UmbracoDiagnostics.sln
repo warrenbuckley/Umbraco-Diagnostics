@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWS.UmbracoDiagnostics.Web", "CWS.UmbracoDiagnostics.Web\CWS.UmbracoDiagnostics.Web.csproj", "{65A842FC-39A4-4AE2-9A24-B3B3A9851053}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{058825C1-C483-4910-945D-4D3D19F6DAA1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
