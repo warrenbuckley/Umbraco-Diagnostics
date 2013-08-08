@@ -126,5 +126,131 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             //Return the list
             return allRoutes;
         }
+
+        public List<string> GetActionHandlers()
+        {
+            var actionHandlers = new List<string>();
+
+            foreach (Type t in TypesImplementingInterface(typeof(umbraco.BusinessLogic.Actions.IActionHandler)))
+            {
+                if (!t.Name.Equals("IActionHandler"))
+                {
+                    var itemToAdd = string.Format("{0} => {1}", t.FullName, new FileInfo(t.Assembly.Location).Name);
+
+                    actionHandlers.Add(itemToAdd);
+                }
+            }
+
+            //return the list
+            return actionHandlers;
+        }
+
+        public List<UmbracoEvent> GetEvents()
+        {
+            //List of items
+            var events = new List<UmbracoEvent>();
+
+            //Darren Ferguson's Ace Code...
+            foreach (Type t in AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(assembly => assembly.GetTypes()
+                    .Where(type => type.FullName.ToLower().StartsWith("umbraco"))
+
+                ))
+            {
+                foreach (EventInfo info in t.GetEvents())
+                {
+                    var eventToAdd = new UmbracoEvent();
+
+
+                    Delegate[] handlers = GetEventSubscribers(t, info.Name);
+                    if (handlers.Length > 0)
+                    {
+                        //Add FullName to object
+                        eventToAdd.FullName = t.FullName;
+
+
+                        //Add Name to object
+                        eventToAdd.Name = info.Name;
+
+                        var eventItems = new List<UmbracoEventItem>();
+
+                        foreach (Delegate d in handlers)
+                        {
+                            var eventItemToAdd          = new UmbracoEventItem();
+                            eventItemToAdd.Location     = new FileInfo(d.Method.DeclaringType.Assembly.Location).Name;
+                            eventItemToAdd.Method       = d.Method.Name;
+                            eventItemToAdd.Namespace    = d.Method.DeclaringType.Namespace + "." + d.Method.DeclaringType.Name;
+
+                            eventItems.Add(eventItemToAdd);
+                        }
+
+                        //Add the items list to the main object
+                        eventToAdd.Items = eventItems;
+
+                        //Add it to the main list
+                        events.Add(eventToAdd);
+                    }
+                }
+            }
+
+            //Return the list
+            return events;
+        }
+
+        //Kudos to Darren Ferguson
+        //https://bitbucket.org/darrenjferguson/open-source-umbraco-packages/src/efe07df117578f65dc1e36a64280537616166deb/event-discovery/FM.EventDiscovery/FMEvents.ascx.cs?at=default
+        public static IEnumerable<Type> TypesImplementingInterface(Type desiredType)
+        {
+            return AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(assembly => assembly.GetTypes())
+                .Where(type => desiredType.IsAssignableFrom(type));
+        }
+
+        //Kudos to Darren Ferguson
+        //https://bitbucket.org/darrenjferguson/open-source-umbraco-packages/src/efe07df117578f65dc1e36a64280537616166deb/event-discovery/FM.EventDiscovery/FMEvents.ascx.cs?at=default
+        protected Delegate[] GetEventSubscribers(Type t, string eventName)
+        {
+            // Type t = target.GetType();
+            List<Delegate> x = new List<Delegate>();
+
+            FieldInfo[] fia = t.GetFields(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance);
+
+            foreach (FieldInfo fi in fia)
+            {
+
+                // Literal1.Text += fi.Name + " - Name<br/>";
+                if (fi.Name.Equals(eventName))
+                {
+                    // Literal1.Text += fi.Name+ " - Name<br/>";
+                    try
+                    {
+                        
+                        object o = fi.GetValue(null);
+                        Type oType = o.GetType();
+                        // Response.Write(o.GetType().Name + "<br/>");
+
+                        Delegate d = (Delegate)o;
+                        foreach (Delegate f in d.GetInvocationList())
+                        {
+                            x.Add(f);
+                        }
+
+                        // x.Add(d);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+                // else { Response.Write("no - " + fi.Name + "<br/>"+Environment.NewLine); }
+            }
+
+
+            return x.ToArray();
+
+        }
     }
 }

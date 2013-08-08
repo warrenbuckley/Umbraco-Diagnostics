@@ -63,8 +63,39 @@
 
         <hr/>
         
+        <div ng-controller="MVCRouteController">
+            <h2>MVC Routes</h2>
+            <ul>
+                <li ng-repeat="route in routes">
+                    <strong>Route URL:</strong> {{ route }}
+                </li>
+            </ul>
+        </div>
+    
+        <hr/>
+    
+        <div ng-controller="EventsController">
+            <h2>Events</h2>
+            <ul>
+                <li ng-repeat="event in events">
+                    <strong>Event Name:</strong> {{ event.Name }}<br/>
+                    <strong>Event Full Name:</strong> {{ event.FullName }}
+                    <ul>
+                        <li ng-repeat="item in event.Items">
+                            <strong>Method:</strong> {{ item.Method }}<br/>
+                            <strong>Namespace:</strong> {{ item.Namespace }}<br/>
+                            <strong>Location:</strong> {{ item.Location }}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <h2>Events</h2>
+        
+
+        <hr/>
+        
         <h2>Rest Extensions</h2>
-       
 
         <hr/>
         
@@ -87,16 +118,6 @@
         <h2>Macro Parameters</h2>
         
         <hr/>
-        
-        <div ng-controller="MVCRouteController">
-            <h2>MVC Routes</h2>
-            <ul>
-                <li ng-repeat="route in routes">
-                    <strong>Route URL:</strong> {{ route }}
-                </li>
-            </ul>
-        </div>
-        
         
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script type="text/javascript" src="/scripts/Controllers.js"></script>

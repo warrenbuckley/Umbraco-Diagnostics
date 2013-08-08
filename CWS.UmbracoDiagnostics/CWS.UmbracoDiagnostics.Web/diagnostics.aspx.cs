@@ -22,19 +22,5 @@ namespace CWS.UmbracoDiagnostics.Web
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-
-       
-
-        protected void GetTrees()
-        {
-            //Get all trees
-            /*
-            AllTrees = TreeDefinitionCollection.Instance;
-
-            //Tree Count
-            treeCount.Text = AllTrees.Count.ToString();
-             * */
-        }
-
     }
 }

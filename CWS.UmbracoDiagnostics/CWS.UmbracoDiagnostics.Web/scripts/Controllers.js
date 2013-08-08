@@ -37,3 +37,10 @@ function MVCRouteController($scope, $http) {
         $scope.routes = data;
     });
 }
+
+function EventsController($scope, $http) {
+
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetEvents').success(function (data) {
+        $scope.events = data;
+    });
+}
