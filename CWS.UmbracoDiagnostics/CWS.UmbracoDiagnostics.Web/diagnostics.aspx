@@ -49,8 +49,6 @@
             </ul>    
         </div>
         
-        
-        
         <hr/>
         
         <div ng-controller="TreeController">
@@ -90,7 +88,15 @@
         
         <hr/>
         
-        <h2>MVC Routes</h2>
+        <div ng-controller="MVCRouteController">
+            <h2>MVC Routes</h2>
+            <ul>
+                <li ng-repeat="route in routes">
+                    <strong>Route URL:</strong> {{ route }}
+                </li>
+            </ul>
+        </div>
+        
         
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script type="text/javascript" src="/scripts/Controllers.js"></script>

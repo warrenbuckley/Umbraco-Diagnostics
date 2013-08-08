@@ -24,11 +24,16 @@ function FolderPermissionsController($scope, $http) {
     });
 }
 
-
-
 function TreeController($scope, $http) {
 
     $http.get('/Umbraco/Api/DiagnosticsApi/GetTrees').success(function (data) {
         $scope.trees = data;
+    });
+}
+
+function MVCRouteController($scope, $http) {
+
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetMvcRoutes').success(function (data) {
+        $scope.routes = data;
     });
 }

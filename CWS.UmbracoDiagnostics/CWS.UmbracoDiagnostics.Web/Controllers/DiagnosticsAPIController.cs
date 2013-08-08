@@ -105,5 +105,26 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             //Return the list
             return permissions;
         }
+
+        public List<String> GetMvcRoutes()
+        {
+            var allRoutes = new List<String>();
+
+            //Get the routes from route table
+            var routes = RouteTable.Routes;
+
+            //loop over them
+            foreach (var route in routes)
+            {
+                //Cast it
+                var item = (Route) route;
+
+                //Add it to the list
+                allRoutes.Add(item.Url.ToString());
+            }
+
+            //Return the list
+            return allRoutes;
+        }
     }
 }
