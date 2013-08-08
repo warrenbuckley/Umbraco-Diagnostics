@@ -44,3 +44,17 @@ function EventsController($scope, $http) {
         $scope.events = data;
     });
 }
+
+function DomainsController($scope, $http) {
+
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetDomains').success(function (data) {
+        $scope.domains = data;
+    });
+}
+
+function UsersController($scope, $http) {
+
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetUsers').success(function (data) {
+        $scope.users = data;
+    });
+}

@@ -90,9 +90,46 @@
                 </li>
             </ul>
         </div>
-        <h2>Events</h2>
         
+        <hr/>
 
+        <div ng-controller="DomainsController">
+            <h2>Domains</h2>
+            <ul>
+                <li ng-repeat="domain in domains">
+                    <strong>Domain:</strong> {{ domain }}
+                </li>
+            </ul>
+        </div>
+
+        <hr/>
+    
+         <div >
+            <h2>Environment</h2>
+            <strong>Server Name:</strong> {{ }}<br/>
+            <strong>Server IP:</strong> {{ }}<br/>
+            <strong>Server Domain:</strong> {{ }}<br/>
+            <strong>Server Port:</strong> {{ }}<br/>
+            <strong>WebServer Version:</strong> {{ }}<br/>
+            <strong>Operating System:</strong> {{ }}<br/>
+            <strong>.NET Version:</strong> {{ }}
+        </div>
+    
+        <hr/>
+    
+        <div ng-controller="UsersController">
+            <h2>Users</h2>
+            <ul>
+                <li ng-repeat="user in users">
+                    <strong>Id:</strong> {{ user.Id }}<br/>
+                    <strong>Username:</strong> {{ user.LoginName }}<br/>
+                    <strong>Name:</strong> {{ user.Name }}<br/>
+                    <strong>Email:</strong> {{ user.Email }}<br/>
+                    <strong>User Type:</strong> {{ user.UserType.Name }}
+                </li>
+            </ul>
+        </div>
+    
         <hr/>
         
         <h2>Rest Extensions</h2>

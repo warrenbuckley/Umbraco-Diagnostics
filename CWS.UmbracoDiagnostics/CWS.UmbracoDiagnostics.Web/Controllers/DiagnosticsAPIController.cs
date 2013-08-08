@@ -8,6 +8,8 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.Routing;
 using CWS.UmbracoDiagnostics.Web.Models;
+using umbraco.BusinessLogic;
+using umbraco.cms.businesslogic.web;
 using Umbraco.Core.Configuration;
 using umbraco.interfaces;
 using Umbraco.Web.WebApi;
@@ -126,6 +128,19 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             //Return the list
             return allRoutes;
         }
+
+        public List<Domain> GetDomains()
+        {
+            return Domain.GetDomains().ToList();
+        }
+
+        public List<User> GetUsers()
+        {
+            var users = umbraco.BusinessLogic.User.getAll().ToList();
+
+            return users;
+        }
+
 
         public List<string> GetActionHandlers()
         {
