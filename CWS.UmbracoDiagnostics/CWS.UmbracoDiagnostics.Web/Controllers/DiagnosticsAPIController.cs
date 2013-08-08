@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Routing;
 using CWS.UmbracoDiagnostics.Web.Models;
@@ -60,6 +62,48 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             return allTrees;
         }
 
-        
+
+        public List<FolderPermission> GetFolderPermissions()
+        {
+            //Create a list of folder permissions
+            var permissions = new List<FolderPermission>();
+
+            //Root folder path
+            string rootFolderPath = HttpContext.Current.Server.MapPath("~/");
+
+            //Get the root folder
+            var rootFolder = new DirectoryInfo(rootFolderPath);
+
+            //Loop over folders
+            foreach (var folder in rootFolder.GetDirectories())
+            {
+                var permissionToAdd         = new FolderPermission();
+                permissionToAdd.FolderName  = folder.Name;
+
+                var rules = new List<string>();
+
+                //Loop over rules
+                //Taken from - http://forums.asp.net/t/1625708.aspx?Folder+rights+on+network
+                foreach (FileSystemAccessRule rule in folder.GetAccessControl().GetAccessRules(true, true, typeof(NTAccount)))
+                {
+                    var item = string.Format("Rule {0} {1} access to {2}",
+                        rule.AccessControlType == AccessControlType.Allow ? "grants" : "denies",
+                        rule.FileSystemRights.ToString(),
+                        rule.IdentityReference.Value);
+
+                    //Add items to the rule
+                    rules.Add(item);
+                }
+
+                //Set the permissions on object to the rules list
+                permissionToAdd.Permissions = rules;
+
+                //Add it to the lsit
+                permissions.Add(permissionToAdd);
+            }
+
+            //Return the list
+            return permissions;
+        }
     }
 }

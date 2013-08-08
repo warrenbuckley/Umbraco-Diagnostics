@@ -34,7 +34,21 @@
 
         <hr/>
         
-        <h2>Folder Permissions</h2>
+        <div ng-controller="FolderPermissionsController">
+            <h2>Folder Permissions</h2>
+            <ul>
+                <li ng-repeat="folder in permissions">
+                    <strong>Folder:</strong> {{ folder.FolderName }}<br/>
+                    <strong>Permissions:</strong>
+                    <ul>
+                        <li ng-repeat="permission in folder.Permissions">
+                            {{ permission }}
+                        </li>
+                    </ul>
+                </li>
+            </ul>    
+        </div>
+        
         
         
         <hr/>

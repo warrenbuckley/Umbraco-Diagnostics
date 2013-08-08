@@ -17,6 +17,15 @@ function AssemblyController($scope, $http) {
     });
 }
 
+function FolderPermissionsController($scope, $http) {
+
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetFolderPermissions').success(function (data) {
+        $scope.permissions = data;
+    });
+}
+
+
+
 function TreeController($scope, $http) {
 
     $http.get('/Umbraco/Api/DiagnosticsApi/GetTrees').success(function (data) {
