@@ -232,6 +232,8 @@
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
+    <Content Include="Partials\version.html" />
+    <Content Include="scripts\app.js" />
     <Content Include="scripts\Controllers.js" />
     <Content Include="scripts\dummy.txt" />
     <Content Include="usercontrols\dummy.txt" />

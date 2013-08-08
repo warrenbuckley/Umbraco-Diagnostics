@@ -9,11 +9,13 @@ using System.Web;
 using System.Web.Routing;
 using CWS.UmbracoDiagnostics.Web.Models;
 using umbraco.BusinessLogic;
+using umbraco.cms.businesslogic.packager;
 using umbraco.cms.businesslogic.web;
 using Umbraco.Core.Configuration;
 using umbraco.interfaces;
 using Umbraco.Web.WebApi;
 using umbraco.cms.presentation.Trees;
+using Package = umbraco.cms.businesslogic.packager.repositories.Package;
 
 namespace CWS.UmbracoDiagnostics.Web.Controllers
 {
@@ -139,6 +141,23 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             var users = umbraco.BusinessLogic.User.getAll().ToList();
 
             return users;
+        }
+
+        public List<PackageInstance> GetPackages()
+        {
+            var allPackages = new List<PackageInstance>();
+
+            //Get packages
+            var packages = InstalledPackage.GetAllInstalledPackages();
+
+            //loop over them
+            foreach (var item in packages)
+            {
+                allPackages.Add(item.Data);
+            }
+
+            //Return the list
+            return allPackages;
         }
 
 

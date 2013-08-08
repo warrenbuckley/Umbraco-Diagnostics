@@ -1,0 +1,7 @@
+﻿<h2>Assemblies</h2>
+<ul>
+    <li ng-repeat="dll in assemblies">
+        <strong>Assembly:</strong> {{ dll.AssemblyName }}<br/>
+        <strong>Version:</strong> {{ dll.AssemblyVersion._Major + '.' + dll.AssemblyVersion._Minor + '.' + dll.AssemblyVersion._Build }}
+    </li>
+</ul>

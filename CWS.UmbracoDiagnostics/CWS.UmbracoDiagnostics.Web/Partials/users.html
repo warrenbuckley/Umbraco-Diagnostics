@@ -1,0 +1,10 @@
+﻿<h2>Users</h2>
+<ul>
+    <li ng-repeat="user in users">
+        <strong>Id:</strong> {{ user.Id }}<br/>
+        <strong>Username:</strong> {{ user.LoginName }}<br/>
+        <strong>Name:</strong> {{ user.Name }}<br/>
+        <strong>Email:</strong> {{ user.Email }}<br/>
+        <strong>User Type:</strong> {{ user.UserType.Name }}
+    </li>
+</ul>

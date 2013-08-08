@@ -1,0 +1,14 @@
+﻿<h2>Events</h2>
+<ul>
+    <li ng-repeat="event in events">
+        <strong>Event Name:</strong> {{ event.Name }}<br/>
+        <strong>Event Full Name:</strong> {{ event.FullName }}
+        <ul>
+            <li ng-repeat="item in event.Items">
+                <strong>Method:</strong> {{ item.Method }}<br/>
+                <strong>Namespace:</strong> {{ item.Namespace }}<br/>
+                <strong>Location:</strong> {{ item.Location }}
+            </li>
+        </ul>
+    </li>
+</ul>
