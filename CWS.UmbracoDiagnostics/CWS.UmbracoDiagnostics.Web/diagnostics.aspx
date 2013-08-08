@@ -1,58 +1,77 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="diagnostics.aspx.cs" Inherits="CWS.UmbracoDiagnostics.Web.diagnostics" %>
+<%@ Import Namespace="System.Web.Routing" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Umbraco Diagnostics</title>
+    <style>
+        ul li {
+            margin: 0 0 10px 0;
+        }
+    </style>
 </head>
-<body>
-    <form id="form1" runat="server">
+<body ng-app="">
         <h1>Diagnostics</h1>
-
-        <h2>Version</h2>
-        <p>
-            <strong>Umbraco Version:</strong> <asp:Label runat="server" ID="umbVersion"/><br/>
-            <strong>Umbraco Assembly:</strong> <asp:Label runat="server" ID="umbAssembly"/>
-        </p>
         
-        <hr/>
-        
-        <h2>Assemblies <asp:Label runat="server" ID="assemblyCount"/></h2>
-        <ul>
-            <%
-                foreach (var dll in AllAssemblies)
-                {
-            %>
-                    <li>
-                        <%= dll.GetName().Name %> - <%=dll.GetName().Version %>
-                    </li>
-            <%
-                }
-            %>
-        </ul>
+        <div ng-controller="VersionController">
+            <h2>Version</h2>
+            <strong>Version:</strong> {{ version._Major + '.' + version._Minor + '.' + version._Build }} <br/>
+            <strong>Assembly:</strong> {{ assembly }}
+        </div>
 
         <hr/>
         
-        <h2>Trees <asp:Label runat="server" ID="treeCount"/></h2>
-        <ul>
-            <%
-                foreach (var tree in AllTrees.OrderBy(x => x.App.name))
-                {
-            %>
-                    <li>
-                        <strong>Tree Alias:</strong> <%=tree.Tree.Alias %><br/>
-                        <strong>App Alias:</strong> <%=tree.App.alias %>
-                    </li>
-            <%      
-                }
-            %>
-        </ul>
+        
+        <div ng-controller="AssemblyController">
+            <h2>Assemblies</h2>
+            <ul>
+                <li ng-repeat="dll in assemblies">
+                    {{ dll.AssemblyName }}<br/>
+                    {{ dll.AssemblyVersion._Major + '.' + dll.AssemblyVersion._Minor + '.' + dll.AssemblyVersion._Build }}
+                </li>
+            </ul>
+        </div>
+
+        <hr/>
+        
+        <h2>Folder Permissions</h2>
+        
+        
+        <hr/>
+        
+        <h2>Trees</h2>
         
         <hr/>
         
         <h2>Rest Extensions</h2>
+       
+
+        <hr/>
         
-    </form>
+        <h2>XSLT Extensions</h2>
+        
+        <hr/>
+        
+        <h2>Surface Controllers</h2>
+        
+        <hr/>
+        
+        <h2>Web API Controllers</h2>
+        
+        <hr/>
+        
+        <h2>Package Actions</h2>
+        
+        <hr/>
+        
+        <h2>Macro Parameters</h2>
+        
+        <hr/>
+        
+        <h2>MVC Routes</h2>
+        
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/Controllers.js"></script>
 </body>
 </html>

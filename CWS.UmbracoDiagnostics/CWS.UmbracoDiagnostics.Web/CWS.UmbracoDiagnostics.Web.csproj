@@ -232,12 +232,14 @@
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
+    <Content Include="scripts\Controllers.js" />
     <Content Include="scripts\dummy.txt" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="Web.config" />
     <Content Include="xslt\dummy.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DiagnosticsAPIController.cs" />
     <Compile Include="diagnostics.aspx.cs">
       <DependentUpon>diagnostics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +247,7 @@
     <Compile Include="diagnostics.aspx.designer.cs">
       <DependentUpon>diagnostics.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DiagnosticsModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
