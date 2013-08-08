@@ -22,13 +22,12 @@
 
         <hr/>
         
-        
         <div ng-controller="AssemblyController">
             <h2>Assemblies</h2>
             <ul>
                 <li ng-repeat="dll in assemblies">
-                    {{ dll.AssemblyName }}<br/>
-                    {{ dll.AssemblyVersion._Major + '.' + dll.AssemblyVersion._Minor + '.' + dll.AssemblyVersion._Build }}
+                    <strong>Assembly:</strong> {{ dll.AssemblyName }}<br/>
+                    <strong>Version:</strong> {{ dll.AssemblyVersion._Major + '.' + dll.AssemblyVersion._Minor + '.' + dll.AssemblyVersion._Build }}
                 </li>
             </ul>
         </div>
@@ -40,8 +39,16 @@
         
         <hr/>
         
-        <h2>Trees</h2>
-        
+        <div ng-controller="TreeController">
+            <h2>Trees</h2>
+            <ul>
+                <li ng-repeat="item in trees">
+                    <strong>Alias:</strong> {{ item.Tree.Alias }}<br/>
+                    <strong>App:</strong> {{ item.App.alias }}
+                </li>
+            </ul>
+        </div>
+
         <hr/>
         
         <h2>Rest Extensions</h2>

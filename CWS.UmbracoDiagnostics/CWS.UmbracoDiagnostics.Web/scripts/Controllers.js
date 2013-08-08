@@ -16,3 +16,10 @@ function AssemblyController($scope, $http) {
         $scope.assemblies = data;
     });
 }
+
+function TreeController($scope, $http) {
+
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetTrees').success(function (data) {
+        $scope.trees = data;
+    });
+}

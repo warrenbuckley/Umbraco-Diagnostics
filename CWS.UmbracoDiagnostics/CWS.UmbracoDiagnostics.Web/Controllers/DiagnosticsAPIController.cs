@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Routing;
 using CWS.UmbracoDiagnostics.Web.Models;
 using Umbraco.Core.Configuration;
+using umbraco.interfaces;
 using Umbraco.Web.WebApi;
+using umbraco.cms.presentation.Trees;
 
 namespace CWS.UmbracoDiagnostics.Web.Controllers
 {
@@ -50,5 +53,13 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             return assemblies;
 
         }
+
+        public TreeDefinitionCollection GetTrees()
+        {
+            var allTrees = TreeDefinitionCollection.Instance;
+            return allTrees;
+        }
+
+        
     }
 }
