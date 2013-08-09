@@ -19,7 +19,7 @@ using Package = umbraco.cms.businesslogic.packager.repositories.Package;
 
 namespace CWS.UmbracoDiagnostics.Web.Controllers
 {
-    public class DiagnosticsAPIController : UmbracoApiController
+    public class DiagnosticsAPIController : UmbracoAuthorizedApiController
     {
 
         public Version GetVersion()
