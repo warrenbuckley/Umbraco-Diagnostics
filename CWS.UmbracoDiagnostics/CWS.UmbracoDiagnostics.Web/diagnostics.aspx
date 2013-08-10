@@ -20,8 +20,8 @@
     <h1>Diagnostics</h1>
     
     <!-- Nav -->
-    <ul>
-        <li>
+    <ul class="nav nav-tabs">
+        <li class="active">
             <a href="#/">Version</a>
         </li>
         <li>
