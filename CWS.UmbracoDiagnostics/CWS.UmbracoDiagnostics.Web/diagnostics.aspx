@@ -1,9 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="diagnostics.aspx.cs" Inherits="CWS.UmbracoDiagnostics.Web.diagnostics" %>
-<%@ Import Namespace="System.Web.Routing" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>Umbraco Diagnostics</title>
 
     <!-- Latest compiled and minified CSS -->
