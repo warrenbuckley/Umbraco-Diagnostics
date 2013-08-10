@@ -7,12 +7,6 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
-
-    <style>
-        ul li {
-            margin: 0 0 10px 0;
-        }
-    </style>
 </head>
 <body ng-app="umbracoDiagnosticsApp">
     
