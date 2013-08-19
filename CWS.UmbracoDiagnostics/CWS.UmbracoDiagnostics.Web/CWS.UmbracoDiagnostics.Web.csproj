@@ -210,6 +210,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Diagnostics\dashboard.ascx" />
+    <Content Include="App_Plugins\Diagnostics\index.html" />
+    <Content Include="App_Plugins\dummy.txt" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <Content Include="bin\amd64\sqlceca40.dll" />
@@ -248,6 +251,13 @@
     <Content Include="xslt\dummy.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Plugins\Diagnostics\dashboard.ascx.cs">
+      <DependentUpon>dashboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Plugins\Diagnostics\dashboard.ascx.designer.cs">
+      <DependentUpon>dashboard.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\DiagnosticsAPIController.cs" />
     <Compile Include="diagnostics.aspx.cs">
       <DependentUpon>diagnostics.aspx</DependentUpon>

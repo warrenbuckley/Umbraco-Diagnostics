@@ -7,47 +7,47 @@ umbracoDiagnosticsApp.config(function($routeProvider) {
         .when('/',
             {
                 controller: 'VersionController',
-                templateUrl: '/partials/version.html'
+                templateUrl: 'partials/version.html'
             })
         .when('/packages',
             {
                 controller: 'PackagesController',
-                templateUrl: '/partials/packages.html'
+                templateUrl: 'partials/packages.html'
             })
         .when('/users',
             {
                 controller: 'UsersController',
-                templateUrl: '/partials/users.html'
+                templateUrl: 'partials/users.html'
             })
         .when('/domains',
             {
                 controller: 'DomainsController',
-                templateUrl: '/partials/domains.html'
+                templateUrl: 'partials/domains.html'
             })
         .when('/assemblies',
             {
                 controller: 'AssemblyController',
-                templateUrl: '/partials/assemblies.html'
+                templateUrl: 'partials/assemblies.html'
             })
         .when('/permissions',
             {
                 controller: 'FolderPermissionsController',
-                templateUrl: '/partials/folderpermissions.html'
+                templateUrl: 'partials/folderpermissions.html'
             })
         .when('/events',
             {
                 controller: 'EventsController',
-                templateUrl: '/partials/events.html'
+                templateUrl: 'partials/events.html'
             })
         .when('/routes',
             {
                 controller: 'MVCRouteController',
-                templateUrl: '/partials/MVCRoutes.html'
+                templateUrl: 'partials/MVCRoutes.html'
             })
         .when('/trees',
             {
                 controller: 'TreesController',
-                templateUrl: '/partials/trees.html'
+                templateUrl: 'partials/trees.html'
             })
         .otherwise({ redirectTo: '/' });
 });
