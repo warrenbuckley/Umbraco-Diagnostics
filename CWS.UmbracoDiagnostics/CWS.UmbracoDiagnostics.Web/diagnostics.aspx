@@ -11,34 +11,33 @@
 <body ng-app="umbracoDiagnosticsApp">
     
     <h1>Diagnostics</h1>
-    
     <!-- Nav -->
     <ul class="nav nav-tabs">
-        <li class="active">
+        <li ng-class="{active: locationUrl == '/'}">
             <a href="#/">Version</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/packages'}">
             <a href="#/packages">Packages</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/users'}">
             <a href="#/users">Users</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/domains'}">
             <a href="#/domains">Domains</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/assemblies'}">
             <a href="#/assemblies">Assemblies</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/permissions'}">
             <a href="#/permissions">Permissions</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/events'}">
             <a href="#/events">Events</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/routes'}">
             <a href="#/routes">MVC Routes</a>
         </li>
-        <li>
+        <li ng-class="{active: locationUrl == '/trees'}">
             <a href="#/trees">Trees</a>
         </li>
     </ul>
@@ -47,7 +46,7 @@
     <div ng-view=""></div>
     
     <!-- JS -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script type="text/javascript" src=h"https://ajax.googleapis.comttps://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->

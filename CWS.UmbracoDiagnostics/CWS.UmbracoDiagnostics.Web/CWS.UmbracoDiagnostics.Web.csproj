@@ -232,9 +232,16 @@
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
+    <Content Include="Partials\assemblies.html" />
+    <Content Include="Partials\events.html" />
+    <Content Include="Partials\MVCRoutes.html" />
+    <Content Include="Partials\trees.html" />
+    <Content Include="Partials\folderpermissions.html" />
+    <Content Include="Partials\domains.html" />
+    <Content Include="Partials\users.html" />
+    <Content Include="Partials\packages.html" />
     <Content Include="Partials\version.html" />
     <Content Include="scripts\app.js" />
-    <Content Include="scripts\Controllers.js" />
     <Content Include="scripts\dummy.txt" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="Web.config" />
