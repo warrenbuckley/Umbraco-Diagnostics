@@ -18,7 +18,16 @@ namespace CWS.UmbracoDiagnostics.Web.Models
     {
         public string FolderName { get; set; }
 
-        public List<string> Permissions { get; set; }
+        public List<FolderPermissionItem> Permissions { get; set; }
+    }
+
+    public class FolderPermissionItem
+    {
+        public string User { get; set; }
+
+        public string Type { get; set; }
+
+        public string Access { get; set; }
     }
 
     public class UmbracoEvent

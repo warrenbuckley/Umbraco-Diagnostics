@@ -212,6 +212,7 @@
   <ItemGroup>
     <Content Include="App_Plugins\Diagnostics\dashboard.ascx" />
     <Content Include="App_Plugins\Diagnostics\index.html" />
+    <Content Include="App_Plugins\Diagnostics\scripts\angular1.0.7.min.js" />
     <Content Include="App_Plugins\dummy.txt" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
@@ -235,16 +236,16 @@
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
-    <Content Include="Partials\assemblies.html" />
-    <Content Include="Partials\events.html" />
-    <Content Include="Partials\MVCRoutes.html" />
-    <Content Include="Partials\trees.html" />
-    <Content Include="Partials\folderpermissions.html" />
-    <Content Include="Partials\domains.html" />
-    <Content Include="Partials\users.html" />
-    <Content Include="Partials\packages.html" />
-    <Content Include="Partials\version.html" />
-    <Content Include="scripts\app.js" />
+    <Content Include="App_Plugins\Diagnostics\Partials\assemblies.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\events.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\MVCRoutes.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\trees.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\folderpermissions.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\domains.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\users.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\packages.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\version.html" />
+    <Content Include="App_Plugins\Diagnostics\scripts\app.js" />
     <Content Include="scripts\dummy.txt" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="Web.config" />

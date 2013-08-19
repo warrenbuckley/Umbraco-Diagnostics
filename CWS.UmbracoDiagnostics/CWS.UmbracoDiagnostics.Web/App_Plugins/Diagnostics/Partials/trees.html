@@ -1,7 +1,14 @@
-﻿<h2>Trees</h2>
-<ul>
-    <li ng-repeat="item in trees">
-        <strong>Alias:</strong> {{ item.Tree.Alias }}<br/>
-        <strong>App:</strong> {{ item.App.alias }}
-    </li>
-</ul>
+﻿<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Alias</th>
+            <th>App</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in trees">
+            <td>{{ item.Tree.Alias }}</td>
+            <td>{{ item.App.alias }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -84,25 +84,25 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
                 var permissionToAdd         = new FolderPermission();
                 permissionToAdd.FolderName  = folder.Name;
 
-                var rules = new List<string>();
+                var rules = new List<FolderPermissionItem>();
 
                 //Loop over rules
                 //Taken from - http://forums.asp.net/t/1625708.aspx?Folder+rights+on+network
                 foreach (FileSystemAccessRule rule in folder.GetAccessControl().GetAccessRules(true, true, typeof(NTAccount)))
                 {
-                    var item = string.Format("Rule {0} {1} access to {2}",
-                        rule.AccessControlType == AccessControlType.Allow ? "grants" : "denies",
-                        rule.FileSystemRights.ToString(),
-                        rule.IdentityReference.Value);
+                    var permissionItemToAdd     = new FolderPermissionItem();
+                    permissionItemToAdd.Type    = rule.FileSystemRights.ToString();
+                    permissionItemToAdd.User    = rule.IdentityReference.Value;
+                    permissionItemToAdd.Access  = rule.AccessControlType == AccessControlType.Allow ? "grants" : "denies";
 
                     //Add items to the rule
-                    rules.Add(item);
+                    rules.Add(permissionItemToAdd);
                 }
 
                 //Set the permissions on object to the rules list
                 permissionToAdd.Permissions = rules;
 
-                //Add it to the lsit
+                //Add it to the list
                 permissions.Add(permissionToAdd);
             }
 

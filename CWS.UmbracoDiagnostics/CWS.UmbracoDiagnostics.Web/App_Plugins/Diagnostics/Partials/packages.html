@@ -1,10 +1,20 @@
-﻿<h2>Packages</h2>
-<ul>
-    <li ng-repeat="package in packages">
-        <strong>Id:</strong> {{ package.Id }}<br/>
-        <strong>Name:</strong> {{ package.Name }}<br/>
-        <strong>Version:</strong> {{ package.Version }}<br/>
-        <strong>Author:</strong> {{ package.Author }}<br/>
-        <strong>Has Update?</strong> {{ package.HasUpdate }}
-    </li>
-</ul>
+﻿<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Author</th>
+            <th>Has Update?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="package in packages">
+            <td>{{ package.Id }}</td>
+            <td>{{ package.Name }}</td>
+            <td>{{ package.Version }}</td>
+            <td>{{ package.Author }}</td>
+            <td>{{ package.HasUpdate }}</td>
+        </tr>
+    </tbody>
+</table>

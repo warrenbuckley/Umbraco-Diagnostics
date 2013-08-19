@@ -1,6 +1,24 @@
-﻿<h2>Domains</h2>
-<ul>
-    <li ng-repeat="domain in domains">
-        <strong>Domain:</strong> {{ domain }}
-    </li>
-</ul>
+﻿<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Language ID</th>
+            <th>Language Alias</th>
+            <th>Language Name</th>
+            <th>Root Node ID</th>
+            <th>Is Wildcard?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="domain in domains">
+            <td>{{ domain.Id }}</td>
+            <td>{{ domain.Name }}</td>
+            <td>{{ domain.Language.id }}</td>
+            <td>{{ domain.Language.CultureAlias }}</td>
+            <td>{{ domain.Language.FriendlyName }}</td>
+            <td>{{ domain.RootNodeId }}</td>
+            <td>{{ domain.IsWildcard }}</td>
+        </tr>
+    </tbody>
+</table>
