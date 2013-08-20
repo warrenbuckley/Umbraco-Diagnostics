@@ -4,10 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.AccessControl;
+using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Routing;
 using CWS.UmbracoDiagnostics.Web.Models;
+using Our.Umbraco.uGoLive.Checks;
 using umbraco.BusinessLogic;
 using umbraco.cms.businesslogic.packager;
 using umbraco.cms.businesslogic.web;
@@ -32,6 +34,37 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
             return UmbracoVersion.AssemblyVersion;
         }
 
+        public string GetVersionComment()
+        {
+            return UmbracoVersion.CurrentComment;
+        }
+
+        public ServerInfo GetServerInfo()
+        {
+            var server              = new ServerInfo();
+            server.MachineName      = Environment.MachineName;
+            server.ProcessorCount   = Environment.ProcessorCount;
+            server.AspNetVersion    = Environment.Version;
+            server.IISVersion       = HttpContext.Current.Request.ServerVariables["SERVER_SOFTWARE"];
+
+            return server;
+        }
+
+        public DBInfo GetDBInfo()
+        {
+            var db          = new DBInfo();
+            db.Connection   = DatabaseContext.ConnectionString;
+            db.Type         = DatabaseContext.DatabaseProvider.ToString();
+            db.Configured   = DatabaseContext.IsDatabaseConfigured;
+
+            return db;
+        }
+
+        public IEnumerable<ICheck> GetUGoLiveChecks()
+        {
+            return CheckFactory.Checks.OrderBy(x => x.Group).ThenBy(x => x.Name);
+        }
+
         public List<AssemblyItem> GetAllAssemblies()
         {
             var assemblies = new List<AssemblyItem>();
@@ -50,6 +83,23 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
                 assemblyToAdd.AssemblyName      = item.GetName().Name;
                 assemblyToAdd.AssemblyVersion   = item.GetName().Version;
 
+
+                //MD5
+                using (var md5 = MD5.Create())
+                {
+                    using (var stream = File.OpenRead(item.Location))
+                    {
+                        assemblyToAdd.ChecksumMD5 = BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", "").ToLower();
+                    }
+                }
+
+                //SHA1
+                using (var sha1 = SHA1.Create()) {
+                    using (var stream = File.OpenRead(item.Location)) {
+                        assemblyToAdd.ChecksumSHA1 = BitConverter.ToString(sha1.ComputeHash(stream)).Replace("-", "").ToLower();
+                    }
+                }
+
                 //Add it to the list
                 assemblies.Add(assemblyToAdd);
 
@@ -60,9 +110,9 @@ namespace CWS.UmbracoDiagnostics.Web.Controllers
 
         }
 
-        public TreeDefinitionCollection GetTrees()
+        public IEnumerable<TreeDefinition> GetTrees()
         {
-            var allTrees = TreeDefinitionCollection.Instance;
+            var allTrees = TreeDefinitionCollection.Instance.OrderBy(x => x.App.alias).ThenBy(x => x.Tree.Alias);
             return allTrees;
         }
 

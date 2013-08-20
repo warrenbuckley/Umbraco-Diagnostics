@@ -1,0 +1,56 @@
+﻿<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Version</th>
+            <th>Assembly</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ version._Major + '.' + version._Minor + '.' + version._Build }}</td>
+            <td>{{ assembly }}</td>
+            <td>{{ comment }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr/>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Machine Name</th>
+            <th>Processor Count</th>
+            <th>ASP.NET Version</th>
+            <th>IIS Version</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ server.MachineName }}</td>
+            <td>{{ server.ProcessorCount }}</td>
+            <td>{{ server.AspNetVersion._Major + '.' + server.AspNetVersion._Minor + '.' + server.AspNetVersion._Build }}</td>
+            <td>{{ server.IISVersion }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr/>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Database Type</th>
+            <th>Connection String</th>
+            <th>Is Configured?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ db.Type }}</td>
+            <td>{{ db.Connection }}</td>
+            <td>{{ db.Configured }}</td>
+        </tr>
+    </tbody>
+</table>

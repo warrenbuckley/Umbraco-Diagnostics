@@ -6,8 +6,8 @@ umbracoDiagnosticsApp.config(function($routeProvider) {
     $routeProvider
         .when('/',
             {
-                controller: 'VersionController',
-                templateUrl: 'partials/version.html'
+                controller: 'GeneralController',
+                templateUrl: 'partials/general.html'
             })
         .when('/packages',
             {
@@ -59,14 +59,26 @@ CONTROLLERS
 =====================================
 */
 
-//Version Controller
-umbracoDiagnosticsApp.controller('VersionController', function ($scope, $http, $rootScope, $location) {
+//General Controller
+umbracoDiagnosticsApp.controller('GeneralController', function ($scope, $http, $rootScope, $location) {
     $http.get('/Umbraco/Api/DiagnosticsApi/GetVersion').success(function (data) {
         $scope.version = data;
     });
 
     $http.get('/Umbraco/Api/DiagnosticsApi/GetVersionAssembly').success(function (data) {
         $scope.assembly = data;
+    });
+    
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetVersionComment').success(function (data) {
+        $scope.comment = data;
+    });
+    
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetServerInfo').success(function (data) {
+        $scope.server = data;
+    });
+    
+    $http.get('/Umbraco/Api/DiagnosticsApi/GetDBInfo').success(function (data) {
+        $scope.db = data;
     });
     
     //Pass location url value into an item on our scope object

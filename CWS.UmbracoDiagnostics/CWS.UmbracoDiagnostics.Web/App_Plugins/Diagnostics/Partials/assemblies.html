@@ -3,12 +3,16 @@
         <tr>
             <th>Assembly</th>
             <th>Version</th>
+            <th>Checksum MD5</th>
+            <th>Checksum SHA1</th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="dll in assemblies">
             <td>{{ dll.AssemblyName }}</td>
             <td>{{ dll.AssemblyVersion._Major + '.' + dll.AssemblyVersion._Minor + '.' + dll.AssemblyVersion._Build }}</td>
+            <td>{{ dll.ChecksumMD5 }}</td>
+            <td>{{ dll.ChecksumSHA1 }}</td>
         </tr>
     </tbody>
 </table>

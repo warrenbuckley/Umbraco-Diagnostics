@@ -244,7 +244,7 @@
     <Content Include="App_Plugins\Diagnostics\Partials\domains.html" />
     <Content Include="App_Plugins\Diagnostics\Partials\users.html" />
     <Content Include="App_Plugins\Diagnostics\Partials\packages.html" />
-    <Content Include="App_Plugins\Diagnostics\Partials\version.html" />
+    <Content Include="App_Plugins\Diagnostics\Partials\general.html" />
     <Content Include="App_Plugins\Diagnostics\scripts\app.js" />
     <Content Include="scripts\dummy.txt" />
     <Content Include="usercontrols\dummy.txt" />

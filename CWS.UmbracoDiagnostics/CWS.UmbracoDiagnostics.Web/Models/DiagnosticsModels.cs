@@ -12,6 +12,10 @@ namespace CWS.UmbracoDiagnostics.Web.Models
         public string AssemblyName { get; set; }
 
         public Version AssemblyVersion { get; set; }
+
+        public string ChecksumMD5 { get; set; }
+
+        public string ChecksumSHA1 { get; set; }
     }
 
     public class FolderPermission
@@ -47,4 +51,27 @@ namespace CWS.UmbracoDiagnostics.Web.Models
 
         public string Namespace { get; set; }
     }
+
+    public class ServerInfo
+    {
+        public string MachineName { get; set; }
+
+        public int ProcessorCount { get; set; }
+
+        public Version AspNetVersion { get; set; }
+
+        public string IISVersion { get; set; }
+
+    }
+
+    public class DBInfo
+    {
+        public string Connection { get; set; }
+
+        public string Type { get; set; }
+
+        public bool Configured { get; set; }
+        
+    }
+
 }
