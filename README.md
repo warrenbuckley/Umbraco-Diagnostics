@@ -1,2 +1,2 @@
-CWS-Umbraco-Diagnostics
+Umbraco Diagnostics
 =======================
