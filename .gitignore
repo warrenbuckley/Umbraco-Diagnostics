@@ -1,3 +1,5 @@
 CWS.UmbracoDiagnostics/CWS.UmbracoDiagnostics.Web/App_Data/TEMP/*
 CWS.UmbracoDiagnostics/packages/*
 UmbracoDiagnostics/packages/
+UmbracoDiagnostics/UmbracoDiagnostics.Site/App_Data/TEMP/
+UmbracoDiagnostics/UmbracoDiagnostics/obj/

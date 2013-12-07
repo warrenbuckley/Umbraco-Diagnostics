@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoDiagnostics.Web", "UmbracoDiagnostics.Web\UmbracoDiagnostics.Web.csproj", "{65A842FC-39A4-4AE2-9A24-B3B3A9851053}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{058825C1-C483-4910-945D-4D3D19F6DAA1}"
@@ -9,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{058825
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoDiagnostics", "UmbracoDiagnostics\UmbracoDiagnostics.csproj", "{447367D0-542B-4CF9-B05E-A009F0ABCF05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoDiagnostics.Site", "UmbracoDiagnostics.Site\UmbracoDiagnostics.Site.csproj", "{B13DCF70-0DE2-493C-9217-892E2238D300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +26,14 @@ Global
 		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65A842FC-39A4-4AE2-9A24-B3B3A9851053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447367D0-542B-4CF9-B05E-A009F0ABCF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447367D0-542B-4CF9-B05E-A009F0ABCF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447367D0-542B-4CF9-B05E-A009F0ABCF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447367D0-542B-4CF9-B05E-A009F0ABCF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13DCF70-0DE2-493C-9217-892E2238D300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13DCF70-0DE2-493C-9217-892E2238D300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13DCF70-0DE2-493C-9217-892E2238D300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13DCF70-0DE2-493C-9217-892E2238D300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
