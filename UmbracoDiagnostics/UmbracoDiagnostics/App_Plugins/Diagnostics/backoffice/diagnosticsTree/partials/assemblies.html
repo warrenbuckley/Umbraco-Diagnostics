@@ -1,0 +1,22 @@
+﻿<div ng-controller="Diagnostics.AssemblyController">
+    <div class="umb-pane">
+        <umb-control-group label="Assemblies" description="Assemblies in this system">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Assembly</th>
+                        <th>Version</th>
+                        <th>Checksum MD5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="dll in assemblies">
+                        <td>{{ dll.AssemblyName }}</td>
+                        <td>{{ dll.AssemblyVersion._Major + '.' + dll.AssemblyVersion._Minor + '.' + dll.AssemblyVersion._Build }}</td>
+                        <td>{{ dll.ChecksumMD5 }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+    </div>
+</div>

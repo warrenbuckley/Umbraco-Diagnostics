@@ -1,0 +1,25 @@
+﻿<div ng-controller="Diagnostics.PermissionController">
+    <div class="umb-pane">
+        <umb-control-group label="Permissions" description="Folder permissions">
+            <div ng-repeat="folder in permissions">
+                <h4>{{ folder.FolderName }}</h4>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Access</th>
+                            <th>Type</th>
+                            <th>User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="permission in folder.Permissions">
+                            <td>{{ permission.Access }}</td>
+                            <td>{{ permission.Type }}</td>
+                            <td>{{ permission.User }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </umb-control-group>
+    </div>
+</div>

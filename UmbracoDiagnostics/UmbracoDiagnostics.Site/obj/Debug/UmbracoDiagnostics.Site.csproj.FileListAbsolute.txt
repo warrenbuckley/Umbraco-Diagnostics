@@ -79,3 +79,5 @@ C:\inetpub\wwwroot\Personal\Umbraco-Diagnostics\UmbracoDiagnostics\UmbracoDiagno
 C:\inetpub\wwwroot\Personal\Umbraco-Diagnostics\UmbracoDiagnostics\UmbracoDiagnostics.Site\obj\Debug\UmbracoDiagnostics.Site.csprojResolveAssemblyReference.cache
 C:\inetpub\wwwroot\Personal\Umbraco-Diagnostics\UmbracoDiagnostics\UmbracoDiagnostics.Site\obj\Debug\UmbracoDiagnostics.Site.dll
 C:\inetpub\wwwroot\Personal\Umbraco-Diagnostics\UmbracoDiagnostics\UmbracoDiagnostics.Site\obj\Debug\UmbracoDiagnostics.Site.pdb
+C:\inetpub\wwwroot\Personal\Umbraco-Diagnostics\UmbracoDiagnostics\UmbracoDiagnostics.Site\bin\UmbracoDiagnostics.dll
+C:\inetpub\wwwroot\Personal\Umbraco-Diagnostics\UmbracoDiagnostics\UmbracoDiagnostics.Site\bin\UmbracoDiagnostics.pdb

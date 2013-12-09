@@ -1,0 +1,26 @@
+﻿<div ng-controller="Diagnostics.PackageController">
+    <div class="umb-pane">
+        <umb-control-group label="Packages" description="A list of installed packages">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Version</th>
+                        <th>Author</th>
+                        <th>Has Update?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="package in packages">
+                        <td>{{ package.Id }}</td>
+                        <td>{{ package.Name }}</td>
+                        <td>{{ package.Version }}</td>
+                        <td>{{ package.Author }}</td>
+                        <td>{{ package.HasUpdate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+    </div>
+</div>

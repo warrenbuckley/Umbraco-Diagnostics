@@ -123,6 +123,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
@@ -193,16 +194,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DiagnosticApiModels.cs" />
+    <Compile Include="DiagnosticsApiController.cs" />
+    <Compile Include="DiagnosticsTreeController.cs" />
+    <Compile Include="CodeApiHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Plugins\Diagnostics\" />
+    <None Include="App_Plugins\Diagnostics\package.manifest" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\assembly.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\assemblies.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\permission.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\mvcroute.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\package.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\permissions.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\events.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\mvc-routes.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\trees.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\packages.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\domains.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\users.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\partials\general.html" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\general.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\domain.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\events.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\tree.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\user.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\view.controller.js" />
+    <Content Include="App_Plugins\Diagnostics\backoffice\diagnosticsTree\view.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)App_Plugins\*.*" "$(SolutionDir)UmbracoDiagnostics.Site\App_Plugins" /Y /E</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

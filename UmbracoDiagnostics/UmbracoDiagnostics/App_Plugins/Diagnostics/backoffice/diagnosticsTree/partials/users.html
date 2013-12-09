@@ -1,0 +1,30 @@
+﻿<div ng-controller="Diagnostics.UserController">
+    <div class="umb-pane">
+        <h4>Number of Users: {{ userCount }}</h4>
+
+        <umb-control-group label="Users" description="A list of users stored in this installation">
+            
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>User Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in users">
+                        <td>{{ user.Id }}</td>
+                        <td>{{ user.LoginName }}</td>
+                        <td>{{ user.Name }}</td>
+                        <td>{{ user.Email }}</td>
+                        <td>{{ user.UserType.Name  }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </umb-control-group>
+    </div>
+</div>

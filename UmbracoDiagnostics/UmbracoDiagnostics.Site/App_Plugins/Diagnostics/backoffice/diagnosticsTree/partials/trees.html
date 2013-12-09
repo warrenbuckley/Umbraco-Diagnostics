@@ -1,0 +1,20 @@
+﻿<div ng-controller="Diagnostics.TreeController">
+    <div class="umb-pane">
+        <umb-control-group label="Trees" description="Trees registered in this system">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Alias</th>
+                        <th>App</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in trees">
+                        <td>{{ item.Tree.Alias }}</td>
+                        <td>{{ item.App.alias }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+    </div>
+</div>

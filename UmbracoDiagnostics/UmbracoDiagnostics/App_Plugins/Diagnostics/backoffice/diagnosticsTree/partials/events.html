@@ -1,0 +1,30 @@
+﻿<div ng-controller="Diagnostics.EventController">
+    <div class="umb-pane">
+        <umb-control-group label="Events" description="Events registered in this system">
+            <div ng-show="isLoading">
+                <h4>Loading...</h4>
+            </div>
+
+            <div ng-repeat="event in events">
+                <h4>{{ event.Name }} <small>{{ event.FullName }}</small></h4>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Namespace</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in event.Items">
+                            <td>{{ item.Method }}</td>
+                            <td>{{ item.Namespace }}</td>
+                            <td>{{ item.Location }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </umb-control-group>
+    </div>
+</div>

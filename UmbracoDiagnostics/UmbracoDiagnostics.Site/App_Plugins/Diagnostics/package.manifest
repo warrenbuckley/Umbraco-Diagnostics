@@ -1,0 +1,14 @@
+﻿{
+	javascript: [
+	    '~/App_Plugins/Diagnostics/backoffice/diagnosticstree/view.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/general.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/package.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/user.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/domain.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/assembly.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/permission.controller.js',
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/events.controller.js',	
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/mvcroute.controller.js',		
+		'~/App_Plugins/Diagnostics/backoffice/diagnosticstree/tree.controller.js'
+	]
+}

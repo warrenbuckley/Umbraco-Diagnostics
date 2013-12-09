@@ -1,0 +1,62 @@
+﻿<div ng-controller="Diagnostics.GeneralController">
+    <div class="umb-pane">
+        <umb-control-group label="Version" description="Detail about this version">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Assembly</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ version.CurrentVersion._Major + '.' + version.CurrentVersion._Minor + '.' + version.CurrentVersion._Build }}</td>
+                        <td>{{ version.AssemblyVersion }}</td>
+                        <td>{{ version.VersionComment }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+        
+        <umb-control-group label="Server" description="Detail about this server">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Machine Name</th>
+                        <th>Processor Count</th>
+                        <th>ASP.NET Version</th>
+                        <th>IIS Version</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ server.MachineName }}</td>
+                        <td>{{ server.ProcessorCount }}</td>
+                        <td>{{ server.AspNetVersion._Major + '.' + server.AspNetVersion._Minor + '.' + server.AspNetVersion._Build }}</td>
+                        <td>{{ server.IISVersion }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+        
+        <umb-control-group label="Database" description="Detail about this database">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Database Type</th>
+                        <th>Connection String</th>
+                        <th>Is Configured?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ db.Type }}</td>
+                        <td>{{ db.Connection }}</td>
+                        <td>{{ db.Configured }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+    </div>
+</div>

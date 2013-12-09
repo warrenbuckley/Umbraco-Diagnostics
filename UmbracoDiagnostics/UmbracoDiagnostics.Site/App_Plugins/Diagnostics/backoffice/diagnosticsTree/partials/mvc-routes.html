@@ -1,0 +1,18 @@
+﻿<div ng-controller="Diagnostics.MVCRouteController">
+    <div class="umb-pane">
+        <umb-control-group label="MVC Routes" description="Routes registered in this MVC site">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Route URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="route in routes">
+                        <td>{{ route }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </umb-control-group>
+    </div>
+</div>
