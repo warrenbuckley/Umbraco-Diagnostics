@@ -4,6 +4,11 @@
         <name>umbraco.providers</name>
     </assembly>
     <members>
+        <member name="T:umbraco.providers.members.MembershipEventHandler">
+            <summary>
+            Adds some event handling
+            </summary>
+        </member>
         <member name="T:umbraco.providers.members.UmbracoMembershipProvider">
             <summary>
             Custom Membership Provider for Umbraco Members (User authentication for Frontend applications NOT umbraco CMS)  
@@ -32,7 +37,7 @@
             true if the password was updated successfully; otherwise, false.
             </returns>
         </member>
-        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
+        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.PerformChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
             <summary>
             Processes a request to update the password question and answer for a membership user.
             </summary>
@@ -44,27 +49,11 @@
             true if the password question and answer are updated successfully; otherwise, false.
             </returns>
         </member>
-        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
+        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.PerformCreateUser(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
             <summary>
             Adds a new membership user to the data source.
             </summary>
             <param name="memberTypeAlias"></param>
-            <param name="username">The user name for the new user.</param>
-            <param name="password">The password for the new user.</param>
-            <param name="email">The e-mail address for the new user.</param>
-            <param name="passwordQuestion">The password question for the new user.</param>
-            <param name="passwordAnswer">The password answer for the new user</param>
-            <param name="isApproved">Whether or not the new user is approved to be validated.</param>
-            <param name="providerUserKey">The unique identifier from the membership data source for the user.</param>
-            <param name="status">A <see cref="T:System.Web.Security.MembershipCreateStatus"></see> enumeration value indicating whether the user was created successfully.</param>
-            <returns>
-            A <see cref="T:System.Web.Security.MembershipUser"></see> object populated with the information for the newly created user.
-            </returns>
-        </member>
-        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
-            <summary>
-            Adds a new membership user to the data source.
-            </summary>
             <param name="username">The user name for the new user.</param>
             <param name="password">The password for the new user.</param>
             <param name="email">The e-mail address for the new user.</param>
@@ -82,7 +71,9 @@
             Removes a user from the membership data source.
             </summary>
             <param name="username">The name of the user to delete.</param>
-            <param name="deleteAllRelatedData">true to delete data related to the user from the database; false to leave data related to the user in the database.</param>
+            <param name="deleteAllRelatedData">
+            TODO: This setting currently has no effect
+            </param>
             <returns>
             true if the user was successfully deleted; otherwise, false.
             </returns>
@@ -130,7 +121,7 @@
             The number of users currently accessing the application.
             </returns>
         </member>
-        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.GetPassword(System.String,System.String)">
+        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.PerformGetPassword(System.String,System.String)">
             <summary>
             Gets the password for the specified user name from the data source.
             </summary>
@@ -169,12 +160,13 @@
             The user name associated with the specified e-mail address. If no match is found, return null.
             </returns>
         </member>
-        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.ResetPassword(System.String,System.String)">
+        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.PerformResetPassword(System.String,System.String,System.String)">
             <summary>
             Resets a user's password to a new, automatically generated password.
             </summary>
             <param name="username">The user to reset the password for.</param>
             <param name="answer">The password answer for the specified user (not used with Umbraco).</param>
+            <param name="generatedPassword"></param>
             <returns>The new password for the specified user.</returns>
         </member>
         <member name="M:umbraco.providers.members.UmbracoMembershipProvider.UnlockUser(System.String)">
@@ -201,14 +193,6 @@
             <returns>
             true if the specified username and password are valid; otherwise, false.
             </returns>
-        </member>
-        <member name="M:umbraco.providers.members.UmbracoMembershipProvider.CheckPassword(System.String,System.String)">
-            <summary>
-            Checks the password.
-            </summary>
-            <param name="password">The password.</param>
-            <param name="dbPassword">The dbPassword.</param>
-            <returns></returns>
         </member>
         <member name="M:umbraco.providers.members.UmbracoMembershipProvider.EncodePassword(System.String)">
             <summary>
@@ -256,11 +240,6 @@
         <member name="P:umbraco.providers.members.UmbracoMembershipProvider.AllowManuallyChangingPassword">
             <summary>
             For backwards compatibility, this provider supports this option
-            </summary>
-        </member>
-        <member name="T:umbraco.providers.members.MembershipEventHandler">
-            <summary>
-            Adds some event handling
             </summary>
         </member>
         <member name="M:umbraco.providers.members.UmbracoProfileProvider.GetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)">
@@ -484,7 +463,7 @@
             is stored in the database then we will validate the user - this will allow for an admin password reset if required
             </remarks>
         </member>
-        <member name="M:umbraco.providers.UsersMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
+        <member name="M:umbraco.providers.UsersMembershipProvider.PerformChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
             <summary>
             Processes a request to update the password question and answer for a membership user.
             </summary>
@@ -496,7 +475,7 @@
             true if the password question and answer are updated successfully; otherwise, false.
             </returns>
         </member>
-        <member name="M:umbraco.providers.UsersMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
+        <member name="M:umbraco.providers.UsersMembershipProvider.PerformCreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
             <summary>
             Adds a new membership user to the data source.
             </summary>
@@ -565,7 +544,7 @@
             The number of users currently accessing the application.
             </returns>
         </member>
-        <member name="M:umbraco.providers.UsersMembershipProvider.GetPassword(System.String,System.String)">
+        <member name="M:umbraco.providers.UsersMembershipProvider.PerformGetPassword(System.String,System.String)">
             <summary>
             Gets the password for the specified user name from the data source. This is - for security - not
             supported for Umbraco Users and an exception will be thrown
@@ -605,7 +584,7 @@
             The user name associated with the specified e-mail address. If no match is found, return null.
             </returns>
         </member>
-        <member name="M:umbraco.providers.UsersMembershipProvider.ResetPassword(System.String,System.String)">
+        <member name="M:umbraco.providers.UsersMembershipProvider.PerformResetPassword(System.String,System.String,System.String)">
             <summary>
             Resets a user's password to a new, automatically generated password.
             </summary>
@@ -637,14 +616,6 @@
             <returns>
             true if the specified username and password are valid; otherwise, false.
             </returns>
-        </member>
-        <member name="M:umbraco.providers.UsersMembershipProvider.CheckPassword(System.String,System.String)">
-            <summary>
-            Checks the password.
-            </summary>
-            <param name="password">The password.</param>
-            <param name="dbPassword">The dbPassword.</param>
-            <returns></returns>
         </member>
         <member name="M:umbraco.providers.UsersMembershipProvider.EncodePassword(System.String)">
             <summary>
@@ -680,6 +651,11 @@
         <member name="P:umbraco.providers.UsersMembershipProvider.DefaultUseLegacyEncoding">
             <summary>
             Override to maintain backwards compatibility
+            </summary>
+        </member>
+        <member name="P:umbraco.providers.UsersMembershipProvider.AllowManuallyChangingPassword">
+            <summary>
+            For backwards compatibility, this provider supports this option
             </summary>
         </member>
         <member name="T:umbraco.providers.UsersMembershipUser">

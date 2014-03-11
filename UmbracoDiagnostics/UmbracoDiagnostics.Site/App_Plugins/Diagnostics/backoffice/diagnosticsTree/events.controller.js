@@ -3,7 +3,7 @@
 
         $scope.isLoading = true;
 
-        $http.get('/Umbraco/Diagnostics/DiagnosticsApi/GetEvents').success(function (data) {
+        $http.get(Umbraco.Sys.ServerVariables.Diagnostics.DiagnosticsBaseUrl + '/GetEvents').success(function (data) {
             $scope.events = data;
             
             //Now data is loaded - set to false

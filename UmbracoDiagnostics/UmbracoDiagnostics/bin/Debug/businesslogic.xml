@@ -2040,6 +2040,15 @@
             <param name="email">The email.</param>
             <param name="ut">The ut.</param>
         </member>
+        <member name="M:umbraco.BusinessLogic.User.Update(System.Int32,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Updates the membership provider properties
+            </summary>
+            <param name="id">The id.</param>
+            <param name="email"></param>
+            <param name="disabled"></param>
+            <param name="noConsole"></param>        
+        </member>
         <member name="M:umbraco.BusinessLogic.User.getUserId(System.String,System.String)">
             <summary>
             Gets the ID from the user with the specified login name and password
