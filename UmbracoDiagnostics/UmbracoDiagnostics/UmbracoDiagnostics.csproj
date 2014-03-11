@@ -211,6 +211,9 @@
     <Compile Include="DiagnosticsTreeController.cs" />
     <Compile Include="CodeApiHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerVariableEvents.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
